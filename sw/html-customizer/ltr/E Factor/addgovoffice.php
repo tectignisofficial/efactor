@@ -1,3 +1,20 @@
+<?php 
+include("include/config.php");
+
+if(isset($_POST['submit'])){
+    $branch_name=$_POST['branch_name'];
+    $address=$_POST['address'];
+
+    $sql=mysqli_query($conn,"INSERT INTO `our_office`(`branch_name`,`address`) VALUE ('$branch_name','$address')");
+    if($sql==1){
+        echo'<script>alert("Successfully Submitted");</script>';
+        header("location:governmentofficelist.php");
+    }else{
+        echo'<script>alert("oops...somthing went wrong");</script>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <!--
 Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
@@ -12,18 +29,22 @@ License: You must have a valid license purchased only from themeforest(the above
 
 -->
 <html class="loading" lang="en" data-textdirection="ltr">
-  <!-- BEGIN: Head-->
-  <head>
+<!-- BEGIN: Head-->
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Dashboard E Factor</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
@@ -44,22 +65,25 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/dashboard-ecommerce.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/charts/chart-apex.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/extensions/ext-component-toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/css/plugins/extensions/ext-component-toastr.min.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
 
-  </head>
-  <!-- END: Head-->
+</head>
+<!-- END: Head-->
 
-  <!-- BEGIN: Body-->
-  <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+<!-- BEGIN: Body-->
 
-  <?php include("include/header.php");?>
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click"
+    data-menu="vertical-menu-modern" data-col="">
 
-  <?php include("include/sidebar.php");?>
+    <?php include("include/header.php");?>
+
+    <?php include("include/sidebar.php");?>
 
 
 
@@ -97,27 +121,30 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="card-header">
                                     <h4 class="card-title">Add Office</h4>
                                 </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <!-- Basic -->
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="select2-basic">Branch Name</label>
-                                            <input type="text" class="form-control" id="basicInput" placeholder="Enter Branch"/>
-                                        </div>
+                                <form method="POST">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <!-- Basic -->
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="select2-basic">Branch Name</label>
+                                                <input type="text" class="form-control" name="branch_name"
+                                                    id="branch_name" placeholder="Enter Branch" />
+                                            </div>
 
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="select2-basic">Address</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Address"></textarea>
-                                        </div>
-                                        
-                              
-                                       
-                                        <div class="col-md-12 modal-footer"> 
-                                            <button type="button" class="btn btn-primary">Submit</button>
-                                        </div>
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="select2-basic">Address</label>
+                                                <textarea class="form-control" name="address" id="address" rows="3"
+                                                    placeholder="Address"></textarea>
+                                            </div>
 
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-primary" name="submit"
+                                                    id="submit">Submit</button>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -130,9 +157,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Content-->
 
 
-   
 
- 
+
+
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
@@ -159,12 +186,16 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Page JS-->
 
     <script>
-      $(window).on('load',  function(){
-        if (feather) {
-          feather.replace({ width: 14, height: 14 });
-        }
-      })
+        $(window).on('load', function () {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
     </script>
-  </body>
-  <!-- END: Body-->
+</body>
+<!-- END: Body-->
+
 </html>

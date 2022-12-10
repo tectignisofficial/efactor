@@ -12,18 +12,22 @@ License: You must have a valid license purchased only from themeforest(the above
 
 -->
 <html class="loading" lang="en" data-textdirection="ltr">
-  <!-- BEGIN: Head-->
-  <head>
+<!-- BEGIN: Head-->
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Dashboard E Factor</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
@@ -44,22 +48,25 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/dashboard-ecommerce.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/charts/chart-apex.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/extensions/ext-component-toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/css/plugins/extensions/ext-component-toastr.min.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
 
-  </head>
-  <!-- END: Head-->
+</head>
+<!-- END: Head-->
 
-  <!-- BEGIN: Body-->
-  <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+<!-- BEGIN: Body-->
 
-  <?php include("include/header.php");?>
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click"
+    data-menu="vertical-menu-modern" data-col="">
 
-  <?php include("include/sidebar.php");?>
+    <?php include("include/header.php");?>
+
+    <?php include("include/sidebar.php");?>
 
 
     <!-- BEGIN: Content-->
@@ -78,7 +85,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </li>
                                     <li class="breadcrumb-item"><a href="factory_reg_list.php">Factory List</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Add Factory 
+                                    <li class="breadcrumb-item active">Add Factory
                                     </li>
                                 </ol>
                             </div>
@@ -100,16 +107,19 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="row">
                                         <!-- Basic -->
                                         <div class="col-md-6 mb-1">
+                                            <label class="form-label" for="select2-array">Office</label>
+                                            <div class="mb-1">
+                                                <select class="select2-data-array form-select"
+                                                    id="select2-array"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-1">
                                             <label class="form-label" for="select2-basic">Factory Name</label>
                                             <input type="text" class="form-control" id="basicInput"
                                                 placeholder="Enter Factory Name" />
                                         </div>
 
-                                        <div class="col-md-6 mb-1">
-                                            <label class="form-label" for="select2-basic">Authorized Name</label>
-                                            <input type="text" class="form-control" id="basicInput"
-                                                placeholder="Enter Name" />
-                                        </div>
 
                                         <div class="col-md-12 mb-1">
                                             <label class="form-label" for="select2-basic">Factory Address</label>
@@ -117,13 +127,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 placeholder="Enter Factory Address"></textarea>
                                         </div>
 
+                                        <div class="col-md-12 mb-1">
+                                            <label class="form-label" for="select2-basic">Email</label>
+                                            <input type="text" class="form-control" id="basicInput"
+                                                placeholder="Enter Email" />
+                                        </div>
+
                                         <!-- Multiple -->
                                         <div class="col-md-6 mb-1">
-                                            <label class="form-label" for="select2-array">Office</label>
-                                            <div class="mb-1">
-                                                <select class="select2-data-array form-select"
-                                                    id="select2-array"></select>
-                                            </div>
+                                            <label class="form-label" for="select2-basic">Authorized Name</label>
+                                            <input type="text" class="form-control" id="basicInput"
+                                                placeholder="Enter Name" />
                                         </div>
 
                                         <div class="col-md-6 mb-1">
@@ -172,9 +186,9 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 
-   
 
- 
+
+
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
@@ -201,12 +215,16 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Page JS-->
 
     <script>
-      $(window).on('load',  function(){
-        if (feather) {
-          feather.replace({ width: 14, height: 14 });
-        }
-      })
+        $(window).on('load', function () {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
     </script>
-  </body>
-  <!-- END: Body-->
+</body>
+<!-- END: Body-->
+
 </html>
