@@ -109,41 +109,42 @@ License: You must have a valid license purchased only from themeforest(the above
                                         Add Office
                                     </a>
                                 </div>
-
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Sr. No.</th>
-                                            <th>Branch</th>
-                                            <th>Address</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:10px;">Sr. No.</th>
+                                                <th>Branch</th>
+                                                <th>Address</th>
+                                                <th style="width:160px;">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
                          $sql=mysqli_query($conn,"select * from  our_office");
                         $count=1;
                          while($row=mysqli_fetch_array($sql)){ 
                          ?>
-                                        <tr>
-                                            <td><?php echo $count;?></td>
-                                            <td><?php echo $row['branch_name'];?></td>
-                                            <td><?php echo $row['address'];?></td>
-                                            <td>
-                                                <button type="button"
-                                                    class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
-                                                    data-bs-toggle="modal" data-bs-target="#editUser"><i
-                                                        data-feather="edit"></i></button>
+                                            <tr>
+                                                <td><?php echo $count;?></td>
+                                                <td><?php echo $row['branch_name'];?></td>
+                                                <td><?php echo $row['address'];?></td>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
+                                                        data-bs-toggle="modal" data-bs-target="#editUser"><i
+                                                            data-feather="edit"></i></button>
 
-                                                <a href="#"><button type="button"
-                                                        class="btn btn-icon rounded-circle btn-flat-danger"><i
-                                                            data-feather="trash"></i></button></a>
+                                                    <a href="#"><button type="button"
+                                                            class="btn btn-icon rounded-circle btn-flat-danger"><i
+                                                                data-feather="trash"></i></button></a>
 
-                                            </td>
-                                        </tr>
-                                        <?php $count++; }?>
-                                    </tbody>
-                                </table>
+                                                </td>
+                                            </tr>
+                                            <?php $count++; }?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -153,9 +154,6 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
     </div>
     <!-- END: Content-->
-
-
-
 
 
     <div class="sidenav-overlay"></div>
@@ -171,6 +169,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN: Page Vendor JS-->
     <script src="../../../app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="../../../app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <script src="../../../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -179,8 +178,12 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="../../../app-assets/js/scripts/customizer.min.js"></script>
     <!-- END: Theme JS-->
 
+    <script src="../../../app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
+
     <!-- BEGIN: Page JS-->
     <script src="../../../app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
+    <script src="../../../app-assets/js/scripts/forms/form-select2.js"></script>
+    <script src="../../../app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
     <!-- END: Page JS-->
 
     <script>

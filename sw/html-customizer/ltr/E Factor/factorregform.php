@@ -1,3 +1,25 @@
+<?php include("include/config.php"); 
+
+if(isset($_POST['submit'])){
+    $office=$_POST['office'];
+    $factory_name=$_POST['factory_name'];
+    $factory_address=$_POST['factory_address'];
+    $email=$_POST['email'];
+    $authorized_name=$_POST['Aname'];
+    $mobile_no=$_POST['mobile_number'];
+    $emergency_contact_1=$_POST['contact_1'];
+    $emergency_contact_2=$_POST['contact_2'];
+
+    $sql=mysqli_query($conn,"INSERT INTO `factory_registration`(`office`,`factory_name`,`factory_address`,`email`,`authorized_name`,`mobile_no`,`emergency_contact_1`,`emergency_contact_2`) VALUE ('$office','$factory_name','$factory_address','$email','$authorized_name','$mobile_no','$emergency_contact_1','$emergency_contact_2')");
+    if($sql==1){
+        echo'<script>alert("Successfully Submitted");</script>';
+        header("location:factoryreglist.php");
+    }else{
+        echo'<script>alert("oops...somthing went wrong");</script>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <!--
 Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
@@ -33,6 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/charts/apexcharts.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/extensions/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/select/select2.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -55,6 +78,11 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-flat-pickr.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-pickadate.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
 
 </head>
 <!-- END: Head-->
@@ -83,7 +111,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="factory_reg_list.php">Factory List</a>
+                                    <li class="breadcrumb-item"><a href="factoryreglist.php">Factory List</a>
                                     </li>
                                     <li class="breadcrumb-item active">Add Factory
                                     </li>
@@ -104,74 +132,89 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <h4 class="card-title">Add Factory</h4>
                                 </div>
                                 <div class="card-body">
-                                    <div class="row">
-                                        <!-- Basic -->
-                                        <div class="col-md-6 mb-1">
-                                            <label class="form-label" for="select2-array">Office</label>
-                                            <div class="mb-1">
-                                                <select class="select2-data-array form-select"
-                                                    id="select2-array"></select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 mb-1">
-                                            <label class="form-label" for="select2-basic">Factory Name</label>
-                                            <input type="text" class="form-control" id="basicInput"
-                                                placeholder="Enter Factory Name" />
-                                        </div>
-
-
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="select2-basic">Factory Address</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
-                                                placeholder="Enter Factory Address"></textarea>
-                                        </div>
-
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="select2-basic">Email</label>
-                                            <input type="text" class="form-control" id="basicInput"
-                                                placeholder="Enter Email" />
-                                        </div>
-
-                                        <!-- Multiple -->
-                                        <div class="col-md-6 mb-1">
-                                            <label class="form-label" for="select2-basic">Authorized Name</label>
-                                            <input type="text" class="form-control" id="basicInput"
-                                                placeholder="Enter Name" />
-                                        </div>
-
-                                        <div class="col-md-6 mb-1">
-                                            <label class="form-label" for="select2-basic">Mobile Number</label>
-                                            <input type="text" class="form-control" id="basicInput"
-                                                placeholder="Enter Mobile" />
-                                        </div>
-
-                                        <div class="col-md-12 mb-1">
-                                            <div class="row">
-                                                <label class="form-label" for="select2-basic">Emergency Contact No.
-                                                </label>
-                                                <div class="col-sm-6 mb-1">
-                                                    <div class="input-group has-validation">
-                                                        <span class="input-group-text" id="inputGroupPrepend">1</span>
-                                                        <input type="text" class="form-control" id="basicInput"
-                                                            placeholder="Enter 1 Contact" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-1">
-                                                    <div class="input-group has-validation">
-                                                        <span class="input-group-text" id="inputGroupPrepend">2</span>
-                                                        <input type="text" class="form-control" id="basicInput"
-                                                            placeholder="Enter 2 Contact" />
-                                                    </div>
+                                    <form method="POST">
+                                        <div class="row">
+                                            <!-- Basic -->
+                                            <div class="col-md-6 mb-1">
+                                                <label class="form-label"
+                                                    for="select2-basic">Office</label>
+                                                <div class="mb-1">
+                                                    <?php
+                                                $query=mysqli_query($conn,"select * from our_office");
+                                               
+                                                ?>
+                                                    <!-- <select class="select2-data-array form-select" name="office" id="select2-array"> -->
+                                                    <select class="select2 form-select" id="select2-basic" name="office">
+                                                        <option selected>Select</option>
+                                                        <?php
+                                                    while($sql=mysqli_fetch_array($query)) { ?>
+                                                        <option>
+                                                            <?php echo $sql['branch_name']; ?></option>
+                                                        <?php } ?>
+                                                    </select>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-md-12 modal-footer">
-                                            <button type="button" class="btn btn-primary">Submit</button>
-                                        </div>
+                                            <div class="col-md-6 mb-1">
+                                                <label class="form-label" for="select2-basic">Factory Name</label>
+                                                <input type="text" class="form-control" name="factory_name"
+                                                    id="factory_name" placeholder="Enter Factory Name" />
+                                            </div>
 
-                                    </div>
+
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="select2-basic">Factory Address</label>
+                                                <textarea class="form-control" name="factory_address"
+                                                    id="factory_address" rows="2"
+                                                    placeholder="Enter Factory Address"></textarea>
+                                            </div>
+
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="select2-basic">Email</label>
+                                                <input type="text" class="form-control" name="email" id="email"
+                                                    placeholder="Enter Email" />
+                                            </div>
+
+                                            <!-- Multiple -->
+                                            <div class="col-md-6 mb-1">
+                                                <label class="form-label" for="select2-basic">Authorized Name</label>
+                                                <input type="text" class="form-control" name="Aname" id="Aname"
+                                                    placeholder="Enter Authorized Name" />
+                                            </div>
+
+                                            <div class="col-md-6 mb-1">
+                                                <label class="form-label" for="select2-basic">Mobile Number</label>
+                                                <input type="text" class="form-control" name="mobile_number"
+                                                    id="mobile_number" placeholder="Enter Mobile Number" />
+                                            </div>
+
+                                            <div class="col-md-12 mb-1">
+                                                <div class="row">
+                                                    <label class="form-label" for="select2-basic">Emergency Contact No.
+                                                    </label>
+                                                    <div class="col-sm-6 mb-1">
+                                                        <div class="input-group has-validation">
+                                                            <span class="input-group-text">1</span>
+                                                            <input type="text" class="form-control" name="contact_1" id="contact_1
+                                                                placeholder="Enter Contact 1" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 mb-1">
+                                                        <div class="input-group has-validation">
+                                                            <span class="input-group-text">2</span>
+                                                            <input type="text" class="form-control" name="contact_2" id="contact_2"
+                                                                placeholder="Enter Contact 2" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 modal-footer">
+                                                <button type="submit" name="submit" id="submit"
+                                                    class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -202,6 +245,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN: Page Vendor JS-->
     <script src="../../../app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="../../../app-assets/vendors/js/extensions/toastr.min.js"></script>
+    <script src="../../../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -212,6 +256,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <!-- BEGIN: Page JS-->
     <script src="../../../app-assets/js/scripts/pages/dashboard-ecommerce.min.js"></script>
+    <script src="../../../app-assets/js/scripts/forms/form-select2.js"></script>
     <!-- END: Page JS-->
 
     <script>
