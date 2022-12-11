@@ -1,3 +1,5 @@
+<?php include("include/config.php"); ?>
+
 <!DOCTYPE html>
 <!--
 Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
@@ -12,18 +14,22 @@ License: You must have a valid license purchased only from themeforest(the above
 
 -->
 <html class="loading" lang="en" data-textdirection="ltr">
-  <!-- BEGIN: Head-->
-  <head>
+<!-- BEGIN: Head-->
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Dashboard E Factor</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
@@ -44,22 +50,25 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/dashboard-ecommerce.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/charts/chart-apex.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/extensions/ext-component-toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/css/plugins/extensions/ext-component-toastr.min.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
 
-  </head>
-  <!-- END: Head-->
+</head>
+<!-- END: Head-->
 
-  <!-- BEGIN: Body-->
-  <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+<!-- BEGIN: Body-->
 
-  <?php include("include/header.php");?>
+<body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click"
+    data-menu="vertical-menu-modern" data-col="">
 
-  <?php include("include/sidebar.php");?>
+    <?php include("include/header.php");?>
+
+    <?php include("include/sidebar.php");?>
 
 
 
@@ -106,26 +115,34 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <tr>
                                             <th>Sr. No.</th>
                                             <th>Branch</th>
-                                            <th>Address</th>                                            
+                                            <th>Address</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <td>1</td>
-                                        <td>xyz</td>
-                                        <td>panvel</td>
-                                        <td>
-                                            <button type="button"
-                                                class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
-                                                data-bs-toggle="modal" data-bs-target="#editUser"><i
-                                                    data-feather="edit"></i></button>
+                                        <?php
+                         $sql=mysqli_query($conn,"select * from  our_office");
+                        $count=1;
+                         while($row=mysqli_fetch_array($sql)){ 
+                         ?>
+                                        <tr>
+                                            <td><?php echo $count;?></td>
+                                            <td><?php echo $row['branch_name'];?></td>
+                                            <td><?php echo $row['address'];?></td>
+                                            <td>
+                                                <button type="button"
+                                                    class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
+                                                    data-bs-toggle="modal" data-bs-target="#editUser"><i
+                                                        data-feather="edit"></i></button>
 
-                                            <a href="#"><button type="button"
-                                                    class="btn btn-icon rounded-circle btn-flat-danger"><i
-                                                        data-feather="trash"></i></button></a>
+                                                <a href="#"><button type="button"
+                                                        class="btn btn-icon rounded-circle btn-flat-danger"><i
+                                                            data-feather="trash"></i></button></a>
 
-                                        </td>
-                                    </tbody>                              
+                                            </td>
+                                        </tr>
+                                        <?php $count++; }?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -138,9 +155,9 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Content-->
 
 
-   
 
- 
+
+
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
@@ -167,12 +184,16 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- END: Page JS-->
 
     <script>
-      $(window).on('load',  function(){
-        if (feather) {
-          feather.replace({ width: 14, height: 14 });
-        }
-      })
+        $(window).on('load', function () {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
     </script>
-  </body>
-  <!-- END: Body-->
+</body>
+<!-- END: Body-->
+
 </html>
