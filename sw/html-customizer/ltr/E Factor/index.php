@@ -107,7 +107,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">230k</h4>
-                  <p class="card-text font-small-3 mb-0">Sales</p>
+                  <p class="card-text font-small-3 mb-0">Factory</p>
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">8.549k</h4>
-                  <p class="card-text font-small-3 mb-0">Customers</p>
+                  <p class="card-text font-small-3 mb-0">Doctors</p>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">1.423k</h4>
-                  <p class="card-text font-small-3 mb-0">Products</p>
+                  <p class="card-text font-small-3 mb-0">Males</p>
                 </div>
               </div>
             </div>
@@ -146,7 +146,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">$9745</h4>
-                  <p class="card-text font-small-3 mb-0">Revenue</p>
+                  <p class="card-text font-small-3 mb-0">Females</p>
                 </div>
               </div>
             </div>
