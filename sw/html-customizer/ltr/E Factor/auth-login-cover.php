@@ -20,7 +20,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Login Page - Vuexy - Bootstrap HTML admin template</title>
+    <title>Login Page - आरोग्य</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
@@ -87,7 +87,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </g>
                   </g>
                 </svg>
-                <h2 class="brand-text text-primary ms-1">Vuexy</h2></a>
+                <h2 class="brand-text text-primary ms-1">E-आरोग्य (DISH)</h2></a>
               <!-- /Brand logo-->
               <!-- Left Text-->
               <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
@@ -97,34 +97,26 @@ License: You must have a valid license purchased only from themeforest(the above
               <!-- Login-->
               <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                  <h2 class="card-title fw-bold mb-1">Welcome to Vuexy! 👋</h2>
-                  <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
+                  <h2 class="card-title fw-bold mb-1">Welcome to E-आरोग्य (DISH)</h2>
+                  <p class="card-text mb-2">Please sign-in to your account</p>
                   <form class="auth-login-form mt-2" action="index.html" method="POST">
                     <div class="mb-1">
                       <label class="form-label" for="login-email">Email</label>
-                      <input class="form-control" id="login-email" type="text" name="login-email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1"/>
+                      <input class="form-control" id="login-email" type="text" name="login-email" placeholder="Enter Your Email ID" aria-describedby="login-email" autofocus="" tabindex="1"/>
                     </div>
                     <div class="mb-1">
                       <div class="d-flex justify-content-between">
-                        <label class="form-label" for="login-password">Password</label><a href="auth-forgot-password-cover.html"><small>Forgot Password?</small></a>
+                        <label class="form-label" for="login-password">Password</label><a href="#"><small>Forgot Password?</small></a>
                       </div>
                       <div class="input-group input-group-merge form-password-toggle">
                         <input class="form-control form-control-merge" id="login-password" type="password" name="login-password" placeholder="············" aria-describedby="login-password" tabindex="2"/><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                       </div>
                     </div>
-                    <div class="mb-1">
-                      <div class="form-check">
-                        <input class="form-check-input" id="remember-me" type="checkbox" tabindex="3"/>
-                        <label class="form-check-label" for="remember-me"> Remember Me</label>
-                      </div>
-                    </div>
+ 
                     <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
                   </form>
-                  <p class="text-center mt-2"><span>New on our platform?</span><a href="auth-register-cover.html"><span>&nbsp;Create an account</span></a></p>
-                  <div class="divider my-2">
-                    <div class="divider-text">or</div>
-                  </div>
-                  <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i data-feather="mail"></i></a><a class="btn btn-github" href="#"><i data-feather="github"></i></a></div>
+                 
+                  
                 </div>
               </div>
               <!-- /Login-->
