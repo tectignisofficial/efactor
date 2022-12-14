@@ -113,7 +113,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </g>
                   </g>
                 </svg>
-                <h2 class="brand-text text-primary ms-1">Vuexy</h2></a>
+                <h2 class="brand-text text-primary ms-1">E-आरोग्य (DISH)</h2></a>
               <!-- /Brand logo-->
               <!-- Left Text-->
               <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
@@ -123,12 +123,12 @@ License: You must have a valid license purchased only from themeforest(the above
               <!-- Login-->
               <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                  <h2 class="card-title fw-bold mb-1">Welcome to Vuexy! 👋</h2>
-                  <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
+                  <h2 class="card-title fw-bold mb-1">Welcome to E-आरोग्य (DISH)</h2>
+                  <p class="card-text mb-2">Please sign-in to your account</p>
                   <form class="auth-login-form mt-2" method="POST">
                     <div class="mb-1">
                       <label class="form-label" for="login-email">Email</label>
-                      <input class="form-control" id="login-email" type="text" name="email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1"/>
+                      <input class="form-control" id="login-email" type="text" name="email" placeholder="Enter email id" aria-describedby="login-email" autofocus="" tabindex="1"/>
                     </div>
                     <div class="mb-1">
                       <div class="d-flex justify-content-between">
@@ -138,12 +138,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <input class="form-control form-control-merge" id="login-password" type="password" name="Password" placeholder="············" aria-describedby="login-password" tabindex="2"/><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                       </div>
                     </div>
-                    <div class="mb-1">
-                      <div class="form-check">
-                        <input class="form-check-input" id="remember-me" type="checkbox" tabindex="3"/>
-                        <label class="form-check-label" for="remember-me"> Remember Me</label>
-                      </div>
-                    </div>
+                
                     <button type="submit" name="login" class="btn btn-primary w-100" tabindex="4">Login</button>
                   </form>                 
               </div>
