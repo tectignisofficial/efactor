@@ -1,4 +1,14 @@
-<?php include("include/config.php"); ?>
+<?php include("include/config.php"); 
+
+if(isset($_GET['deleid'])){
+    $deleid=$_GET['deleid'];
+    $sql=mysqli_query($conn,"DELETE from doctor_registration where id ='$deleid'");
+    if($sql){
+        header('location:factoryreglist.php');
+    }
+}
+
+?>
 
 <!DOCTYPE html>
 <!--
@@ -165,7 +175,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         data-bs-toggle="modal" data-bs-target="#editUser"><i
                                                             data-feather="edit"></i></button>
 
-                                                    <a href="#"><button type="button"
+                                                    <a href="factoryreglist.php?deleid=<?php echo $row['id']; ?>"><button type="button"
                                                             class="btn btn-icon rounded-circle btn-flat-danger"><i
                                                                 data-feather="trash"></i></button></a>
 
