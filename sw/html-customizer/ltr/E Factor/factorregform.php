@@ -195,7 +195,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                     <div class="col-sm-6 mb-1">
                                                         <div class="input-group has-validation">
                                                             <span class="input-group-text">1</span>
-                                                            <input type="text" class="form-control" name="contact_1" id="contact_1
+                                                            <input type="text" class="form-control" name="contact_1" id="contact_1"
                                                                 placeholder="Enter Contact 1" />
                                                         </div>
                                                     </div>
