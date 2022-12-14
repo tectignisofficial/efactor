@@ -94,7 +94,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">230k</h4>
-                  <p class="card-text font-small-3 mb-0">Active Factory</p>
+                  <p class="card-text mb-0" style="font-size: 15px;">Active Factory</p>
                 </div>
               </div>
               <div class="d-flex flex-row">
@@ -105,7 +105,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">230k</h4>
-                  <p class="card-text font-small-3 mb-0">Deactive Factory</p>
+                  <p class="card-text mb-0" style="font-size: 15px;">Deactive Factory</p>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">8.549k</h4>
-                  <p class="card-text font-small-3 mb-0">Active Doctors</p>
+                  <p class="card-text mb-0" style="font-size: 15px;">Active Doctors</p>
                 </div>
               </div>
               <div class="d-flex flex-row">
@@ -129,7 +129,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">8.549k</h4>
-                  <p class="card-text font-small-3 mb-0">Deactive Doctors</p>
+                  <p class="card-text mb-0" style="font-size: 15px;">Deactive Doctors</p>
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">1.423k</h4>
-                  <p class="card-text font-small-3 mb-0">Males</p>
+                  <p class="card-text mb-0" style="font-size: 15px;">Males</p>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="my-auto">
                   <h4 class="fw-bolder mb-0">$9745</h4>
-                  <p class="card-text font-small-3 mb-0">Females</p>
+                  <p class="card-text mb-0" style="font-size: 15px;">Females</p>
                 </div>
               </div>
             </div>
