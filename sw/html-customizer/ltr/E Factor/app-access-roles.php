@@ -123,7 +123,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="d-flex justify-content-between align-items-end mt-1 pt-25">
           <div class="role-heading">
-            <h4 class="fw-bolder">Administrator</h4>
+            <h4 class="fw-bolder">Director</h4>
             <a href="javascript:;" class="role-edit-modal" data-bs-toggle="modal" data-bs-target="#addRoleModal">
               <small class="fw-bolder">Edit Role</small>
             </a>
@@ -188,7 +188,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="d-flex justify-content-between align-items-end mt-1 pt-25">
           <div class="role-heading">
-            <h4 class="fw-bolder">Manager</h4>
+            <h4 class="fw-bolder">Deputy Director</h4>
             <a href="javascript:;" class="role-edit-modal" data-bs-toggle="modal" data-bs-target="#addRoleModal">
               <small class="fw-bolder">Edit Role</small>
             </a>
@@ -253,7 +253,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="d-flex justify-content-between align-items-end mt-1 pt-25">
           <div class="role-heading">
-            <h4 class="fw-bolder">Users</h4>
+            <h4 class="fw-bolder">Add. Director</h4>
             <a href="javascript:;" class="role-edit-modal" data-bs-toggle="modal" data-bs-target="#addRoleModal">
               <small class="fw-bolder">Edit Role</small>
             </a>
@@ -318,7 +318,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="d-flex justify-content-between align-items-end mt-1 pt-25">
           <div class="role-heading">
-            <h4 class="fw-bolder">Support</h4>
+            <h4 class="fw-bolder">Joint Director</h4>
             <a href="javascript:;" class="role-edit-modal" data-bs-toggle="modal" data-bs-target="#addRoleModal">
               <small class="fw-bolder">Edit Role</small>
             </a>
