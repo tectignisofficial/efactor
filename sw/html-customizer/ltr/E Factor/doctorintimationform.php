@@ -1,3 +1,25 @@
+<?php include("include/config.php"); 
+
+if(isset($_POST['submit'])){
+    $factory_name=$_POST['factory_name'];
+    $factory_address=$_POST['factory_address'] ?? null;
+    $office=$_POST['office'] ?? null;
+    $select_period=$_POST['select_period'];
+    $employee_male=$_POST['employee_male'];
+    $employee_female=$_POST['employee_female'];
+    $examination_date_from=$_POST['examination_date_from'];
+    $examination_date_to=$_POST['examination_date_to'];
+
+    $sql=mysqli_query($conn,"INSERT INTO `doctor_intimation`(`factory_name`,`factory_address`,`office`,`select_period`,`employee_male`,`employee_female`,`examination_date_from`,`examination_date_to`) VALUE ('$factory_name','$factory_address','$office','$select_period','$employee_male','$employee_female','$examination_date_from','$examination_date_to')");
+    if($sql==1){
+        echo'<script>alert("Successfully Submitted");</script>';
+        header("location:doctorintimation.php");
+    }else{
+        echo'<script>alert("oops...somthing went wrong");</script>';
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -75,7 +97,9 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Intimation Form</a>
+                                    <li class="breadcrumb-item"><a href="doctorintimation.php">Intimation</a>
+                                    </li>
+                                    <li class="breadcrumb-item">Intimation Form
                                     </li>
                                 </ol>
                             </div>
@@ -94,89 +118,107 @@
                                     <h4 class="card-title">Intimation Form</h4>
                                 </div>
                                 <div class="card-body">
-                                    <div class="row">
-                                        <!-- Basic -->
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="select2-basic">Factory Name</label>
-                                            <div class="mb-1">
-                                                <select class="select2-data-array form-select"
-                                                    id="select2-array"></select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="select2-basic">Address</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
-                                                placeholder="Address" readonly></textarea>
-                                        </div>
-
-                                        <!-- Multiple -->
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="select2-array">Office</label>
-                                            <input type="text" class="form-control" id="basicInput" placeholder="Office"
-                                                readonly />
-                                        </div>
-
-
-                                        <div class="col-md-12 mb-1">
-                                            <label class="form-label" for="basicSelect">Select Period</label>
-                                            <select class="form-select" id="basicSelect">
-                                                <option>Select</option>
-                                                <option>6 Month</option>
-                                                <option>1 Year</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-md-12 mb-1">
-                                            <div class="row">
-                                                <label class="form-label" for="select2-basic">No. of Employee </label>
-                                                <div class="col-sm-6 mb-1">
-                                                <div class="input-group has-validation">
-                                                        <span class="input-group-text"
-                                                            id="inputGroupPrepend">Male</span>
-                                                        <input type="text" class="form-control" id="basicInput"
-                                                            placeholder="Enter Male" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-1">
-                                                    <div class="input-group has-validation">
-                                                        <span class="input-group-text"
-                                                            id="inputGroupPrepend">Female</span>
-                                                        <input type="text" class="form-control" id="basicInput"
-                                                            placeholder="Enter Female" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 mb-1">
+                                    <form method="POST">
                                         <div class="row">
-                                            <label class="form-label" for="select2-basic">Date of
-                                                Examination</label>
-                                            <div class="col-sm-6 mb-1">
-                                                <div class="input-group has-validation">
-                                                    <span class="input-group-text" id="inputGroupPrepend">From</span>
-                                                    <input type="text" id="fp-human-friendly"
-                                                        class="form-control flatpickr-human-friendly"
-                                                        placeholder="MM DD, YYYY" />
+                                            <!-- Basic -->
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="select2-basic">Factory Name</label>
+                                                <div class="mb-1">
+                                                    <?php
+                                                $query=mysqli_query($conn,"select * from factory_registration");
+                                               
+                                                ?>
+                                                    <select class="select2 form-select factoryname" id="select2-basic "
+                                                        name="factory_name" >
+                                                        <option selected>Select</option>
+                                                        <?php
+                                                    while($sql=mysqli_fetch_array($query)) { ?>
+                                                        <option value="<?php echo $sql['factory_name']; ?>">
+                                                            <?php echo $sql['factory_name']; ?></option>
+                                                        <?php } ?>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 mb-1">
-                                                <div class="input-group has-validation">
-                                                    <span class="input-group-text" id="inputGroupPrepend">To</span>
-                                                    <input type="text" id="fp-human-friendly"
-                                                        class="form-control flatpickr-human-friendly"
-                                                        placeholder="MM DD, YYYY" />
+                                            <div class="ajaxcall">
+
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="select2-basic">Address</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
+                                                    value=""
+                                                    name="factory_address" placeholder="Address" readonly></textarea>
+                                            </div>
+
+                                            <!-- Multiple -->
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="select2-array">Office</label>
+                                                <input type="text" class="form-control" id="basicInput" value=""
+                                                    name="office" placeholder="Office" readonly />
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-12 mb-1">
+                                                <label class="form-label" for="basicSelect">Select Period</label>
+                                                <select class="form-select" id="basicSelect" name="select_period">
+                                                    <option>Select</option>
+                                                    <option>6 Month</option>
+                                                    <option>1 Year</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-12 mb-1">
+                                                <div class="row">
+                                                    <label class="form-label" for="select2-basic">No. of Employee
+                                                    </label>
+                                                    <div class="col-sm-6 mb-1">
+                                                        <div class="input-group has-validation">
+                                                            <span class="input-group-text"
+                                                                id="inputGroupPrepend">Male</span>
+                                                            <input type="text" class="form-control" id="basicInput"
+                                                                name="employee_male" placeholder="Enter Male" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 mb-1">
+                                                        <div class="input-group has-validation">
+                                                            <span class="input-group-text"
+                                                                id="inputGroupPrepend">Female</span>
+                                                            <input type="text" class="form-control" id="basicInput"
+                                                                name="employee_female" placeholder="Enter Female" />
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                            </div>
+
+                                            <div class="col-md-12 mb-1">
+                                                <div class="row">
+                                                    <label class="form-label" for="select2-basic">Date of
+                                                        Examination</label>
+                                                    <div class="col-sm-6 mb-1">
+                                                        <div class="input-group has-validation">
+                                                            <span class="input-group-text"
+                                                                id="inputGroupPrepend">From</span>
+                                                            <input type="text" name="examination_date_from" id="fp-human-friendly"
+                                                                class="form-control flatpickr-human-friendly"
+                                                                placeholder="MM DD, YYYY" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 mb-1">
+                                                        <div class="input-group has-validation">
+                                                            <span class="input-group-text"
+                                                                id="inputGroupPrepend">To</span>
+                                                            <input type="text" name="examination_date_to" id="fp-human-friendly"
+                                                                class="form-control flatpickr-human-friendly"
+                                                                placeholder="MM DD, YYYY" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12 modal-footer" style="margin-top:0;">
+                                                <button type="submit" class="btn btn-primary"
+                                                    name="submit">Submit</button>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div class="col-md-12 modal-footer" style="margin-top:0;">
-                                        <button type="button" class="btn btn-primary">Submit</button>
-                                    </div>
-
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -225,6 +267,33 @@
                     height: 14
                 });
             }
+        })
+    </script>
+    <script>
+//         function fileint(val){
+//             let val=val;
+//             $.ajax({
+//                 url:'api.php',
+//                 method:'post',
+//                 data:{val:val},
+//                 success:function(data){
+// alert(data);
+//                 }
+//             })
+//         }
+
+        $(document).ready(function(){
+            $(".factoryname").change(function(){
+                let factory=$(this).val()
+                $.ajax({
+                url:'api.php',
+                method:'post',
+                data:{factory:factory},
+                success:function(data){
+                    $(".ajaxcall").html(data);
+                }
+            })
+            })
         })
     </script>
 </body>

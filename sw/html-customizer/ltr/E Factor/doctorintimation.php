@@ -1,3 +1,5 @@
+<?php include("include/config.php"); ?>
+
 <!DOCTYPE html>
 <!--
 Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
@@ -12,26 +14,34 @@ License: You must have a valid license purchased only from themeforest(the above
 
 -->
 <html class="loading" lang="en" data-textdirection="ltr">
-  <!-- BEGIN: Head-->
-  <head>
+<!-- BEGIN: Head-->
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="description"
+        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Dashboard E Factory</title>
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+        rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/forms/select/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="../../../app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -52,8 +62,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
 
-  </head>
-  <!-- END: Head-->
+</head>
+<!-- END: Head-->
 <!-- BEGIN: Body-->
 
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static  " data-open="click"
@@ -124,15 +134,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <td>1</td>
-                                        <td>xyz</td>
-                                        <td>Panvel</td>
-                                        <td>aaaa</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>December 20, 2022</td>
-                                        <td>December 20, 2022</td>
-                                        <td>1</td>
+                                        <?php 
+                                                $sql=mysqli_query($conn,"select * from doctor_intimation");
+                                                $count=1;
+                                                while($row=mysqli_fetch_array($sql)) { ?>
+                                        <tr>
+                                            <td><?php echo $count; ?></td>
+                                            <td><?php echo $row['factory_name']; ?></td>
+                                            <td><?php echo $row['factory_address']; ?></td>
+                                            <td><?php echo $row['office']; ?></td>
+                                            <td><?php echo $row['select_period']; ?></td>
+                                            <td><?php echo $row['employee_male']; ?></td>
+                                            <td><?php echo $row['employee_female']; ?></td>
+                                            <td><?php echo $row['examination_date_from']; ?></td>
+                                            <td><?php echo $row['examination_date_to']; ?></td>
+                                        </tr>
+                                        <?php $count++; } ?>
                                     </tbody>
                                 </table>
                             </div>
