@@ -56,16 +56,16 @@
           <!-- <li class=" nav-item"><a class="d-flex align-items-center" href="app-kanban.html"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Kanban">Kanban</span></a>
           </li> -->
           <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="file-text"></i><span class="menu-title text-truncate" data-i18n="Invoice">Reports</span></a>
-            <!-- <ul class="menu-content">
-              <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">List</span></a>
+            <ul class="menu-content">
+              <li><a class="d-flex align-items-center" href="report_factory.php"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Factory </span></a>
               </li>
-              <li><a class="d-flex align-items-center" href="app-invoice-preview.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Preview</span></a>
+              <li><a class="d-flex align-items-center" href="report_doctor.php"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">Doctor </span></a>
               </li>
-              <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Edit</span></a>
+              <li><a class="d-flex align-items-center" href="report_intimation.php"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">Intimation</span></a>
               </li>
-              <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Add</span></a>
+              <li><a class="d-flex align-items-center" href="report_form7.php"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">Form 7</span></a>
               </li>
-            </ul> -->
+            </ul>
           </li>
           <!-- <li class=" nav-item"><a class="d-flex align-items-center" href="app-file-manager.html"><i data-feather="save"></i><span class="menu-title text-truncate" data-i18n="File Manager">File Manager</span></a>
           </li> -->

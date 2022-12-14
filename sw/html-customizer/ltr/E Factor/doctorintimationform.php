@@ -129,7 +129,7 @@ if(isset($_POST['submit'])){
                                                
                                                 ?>
                                                     <select class="select2 form-select factoryname" id="select2-basic "
-                                                        name="factory_name" >
+                                                        name="factory_name">
                                                         <option selected>Select</option>
                                                         <?php
                                                     while($sql=mysqli_fetch_array($query)) { ?>
@@ -141,19 +141,19 @@ if(isset($_POST['submit'])){
                                             </div>
                                             <div class="ajaxcall">
 
-                                            <div class="col-md-12 mb-1">
-                                                <label class="form-label" for="select2-basic">Address</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
-                                                    value=""
-                                                    name="factory_address" placeholder="Address" readonly></textarea>
-                                            </div>
+                                                <div class="col-md-12 mb-1">
+                                                    <label class="form-label" for="select2-basic">Address</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                        rows="2" value="" name="factory_address" placeholder="Address"
+                                                        readonly></textarea>
+                                                </div>
 
-                                            <!-- Multiple -->
-                                            <div class="col-md-12 mb-1">
-                                                <label class="form-label" for="select2-array">Office</label>
-                                                <input type="text" class="form-control" id="basicInput" value=""
-                                                    name="office" placeholder="Office" readonly />
-                                            </div>
+                                                <!-- Multiple -->
+                                                <div class="col-md-12 mb-1">
+                                                    <label class="form-label" for="select2-array">Office</label>
+                                                    <input type="text" class="form-control" id="basicInput" value=""
+                                                        name="office" placeholder="Office" readonly />
+                                                </div>
                                             </div>
 
                                             <div class="col-md-12 mb-1">
@@ -196,7 +196,8 @@ if(isset($_POST['submit'])){
                                                         <div class="input-group has-validation">
                                                             <span class="input-group-text"
                                                                 id="inputGroupPrepend">From</span>
-                                                            <input type="text" name="examination_date_from" id="fp-human-friendly"
+                                                            <input type="text" name="examination_date_from"
+                                                                id="fp-human-friendly"
                                                                 class="form-control flatpickr-human-friendly"
                                                                 placeholder="MM DD, YYYY" />
                                                         </div>
@@ -205,7 +206,8 @@ if(isset($_POST['submit'])){
                                                         <div class="input-group has-validation">
                                                             <span class="input-group-text"
                                                                 id="inputGroupPrepend">To</span>
-                                                            <input type="text" name="examination_date_to" id="fp-human-friendly"
+                                                            <input type="text" name="examination_date_to"
+                                                                id="fp-human-friendly"
                                                                 class="form-control flatpickr-human-friendly"
                                                                 placeholder="MM DD, YYYY" />
                                                         </div>
@@ -223,8 +225,9 @@ if(isset($_POST['submit'])){
                             </div>
                         </div>
                     </div>
+                </section>
             </div>
-            </section>
+
             <!-- Select2 End -->
 
         </div>
@@ -270,29 +273,31 @@ if(isset($_POST['submit'])){
         })
     </script>
     <script>
-//         function fileint(val){
-//             let val=val;
-//             $.ajax({
-//                 url:'api.php',
-//                 method:'post',
-//                 data:{val:val},
-//                 success:function(data){
-// alert(data);
-//                 }
-//             })
-//         }
+        //         function fileint(val){
+        //             let val=val;
+        //             $.ajax({
+        //                 url:'api.php',
+        //                 method:'post',
+        //                 data:{val:val},
+        //                 success:function(data){
+        // alert(data);
+        //                 }
+        //             })
+        //         }
 
-        $(document).ready(function(){
-            $(".factoryname").change(function(){
-                let factory=$(this).val()
+        $(document).ready(function () {
+            $(".factoryname").change(function () {
+                let factory = $(this).val()
                 $.ajax({
-                url:'api.php',
-                method:'post',
-                data:{factory:factory},
-                success:function(data){
-                    $(".ajaxcall").html(data);
-                }
-            })
+                    url: 'api.php',
+                    method: 'post',
+                    data: {
+                        factory: factory
+                    },
+                    success: function (data) {
+                        $(".ajaxcall").html(data);
+                    }
+                })
             })
         })
     </script>

@@ -195,6 +195,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="../../../app-assets/js/core/app-menu.min.js"></script>
     <script src="../../../app-assets/js/core/app.min.js"></script>
     <script src="../../../app-assets/js/scripts/customizer.min.js"></script>
+    <script src="../../../https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- END: Theme JS-->
 
     <script src="../../../app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>

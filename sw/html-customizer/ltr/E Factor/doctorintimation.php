@@ -1,4 +1,13 @@
-<?php include("include/config.php"); ?>
+<?php include("include/config.php"); 
+
+if(isset($_GET['deleid'])){
+    $deleid=$_GET['deleid'];
+    $sql=mysqli_query($conn,"DELETE from doctor_intimation where id ='$deleid'");
+    if($sql){
+        header('location:doctorintimation.php');
+    }
+}
+?>
 
 <!DOCTYPE html>
 <!--
@@ -114,44 +123,52 @@ License: You must have a valid license purchased only from themeforest(the above
                                         Add Details
                                     </a>
                                 </div>
-
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th rowspan="2">SR No.</th>
-                                            <th rowspan="2">Factory Name</th>
-                                            <th rowspan="2">Address</th>
-                                            <th rowspan="2">Office</th>
-                                            <th colspan="2" style="text-align: center;">No. of Employee</th>
-                                            <th colspan="2" style="text-align: center;">Date of Examination</th>
-                                            <th rowspan="2">Select Period</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Male</th>
-                                            <th>Female</th>
-                                            <th>From</th>
-                                            <th>To</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2">SR No.</th>
+                                                <th rowspan="2">Factory Name</th>
+                                                <th rowspan="2">Address</th>
+                                                <th rowspan="2">Office</th>
+                                                <th colspan="2" style="text-align: center;">No. of Employee</th>
+                                                <th colspan="2" style="text-align: center;">Date of Examination</th>
+                                                <th rowspan="2">Select Period</th>
+                                                <th rowspan="2">Action</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Male</th>
+                                                <th>Female</th>
+                                                <th>From</th>
+                                                <th>To</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
                                                 $sql=mysqli_query($conn,"select * from doctor_intimation");
                                                 $count=1;
                                                 while($row=mysqli_fetch_array($sql)) { ?>
-                                        <tr>
-                                            <td><?php echo $count; ?></td>
-                                            <td><?php echo $row['factory_name']; ?></td>
-                                            <td><?php echo $row['factory_address']; ?></td>
-                                            <td><?php echo $row['office']; ?></td>
-                                            <td><?php echo $row['select_period']; ?></td>
-                                            <td><?php echo $row['employee_male']; ?></td>
-                                            <td><?php echo $row['employee_female']; ?></td>
-                                            <td><?php echo $row['examination_date_from']; ?></td>
-                                            <td><?php echo $row['examination_date_to']; ?></td>
-                                        </tr>
-                                        <?php $count++; } ?>
-                                    </tbody>
-                                </table>
+                                            <tr>
+                                                <td><?php echo $count; ?></td>
+                                                <td><?php echo $row['factory_name']; ?></td>
+                                                <td><?php echo $row['factory_address']; ?></td>
+                                                <td><?php echo $row['office']; ?></td>
+                                                <td><?php echo $row['employee_male']; ?></td>
+                                                <td><?php echo $row['employee_female']; ?></td>
+                                                <td><?php echo $row['examination_date_from']; ?></td>
+                                                <td><?php echo $row['examination_date_to']; ?></td>
+                                                <td><?php echo $row['select_period']; ?></td>
+                                                <td>
+                                                    <a href="doctorintimation.php?deleid=<?php echo $row['id']; ?>"><button
+                                                            type="button"
+                                                            class="btn btn-icon rounded-circle btn-flat-danger"><i
+                                                                data-feather="trash"></i></button></a>
+                                                </td>
+                                            </tr>
+                                            <?php $count++; } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

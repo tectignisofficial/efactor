@@ -214,7 +214,7 @@
               </i> Settings</a><a class="dropdown-item" href="page-pricing.html">
                 <i class="me-50" data-feather="credit-card"></i> Pricing</a><a class="dropdown-item" href="page-faq.html">
                 <i class="me-50" data-feather="help-circle"></i> FAQ</a> -->
-              <a class="dropdown-item" href="auth-login-cover.html"><i class="me-50" data-feather="power"></i> Logout</a>
+              <a class="dropdown-item" href="login.php"><i class="me-50" data-feather="power"></i> Logout</a>
             </div>
           </li>
         </ul>

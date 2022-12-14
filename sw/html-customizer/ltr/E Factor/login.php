@@ -1,3 +1,29 @@
+<?php 
+session_start();
+include("include/config.php");
+if(isset($_POST['login'])){
+    $Email=$_POST['email'];
+    $password=$_POST['Password'];
+    
+    $sql=mysqli_query($conn,"select * from login where email='$Email'");
+    if(mysqli_num_rows($sql)>0){
+      $row=mysqli_fetch_assoc($sql); 
+      $verify=password_verify($password,$row['password']);
+    
+     if($verify==1){
+        $_SESSION['aid']=$row['id'];
+       
+        header("location:index.php");
+        }else{
+            echo "<script>alert('Password is incorrect');</script>";
+        }
+    }
+    else{
+        echo "<script>alert('Invalid Email Id');</script>";
+    }
+    }
+?>
+
 <!DOCTYPE html>
 <!--
 Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
@@ -63,7 +89,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="content-body">
           <div class="auth-wrapper auth-cover">
             <div class="auth-inner row m-0">
-              <!-- Brand logo--><a class="brand-logo" href="index.html">
+              <!-- Brand logo--><a class="brand-logo" href="index.php">
                 <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                   <defs>
                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -99,17 +125,17 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                   <h2 class="card-title fw-bold mb-1">Welcome to Vuexy! 👋</h2>
                   <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
-                  <form class="auth-login-form mt-2" action="index.html" method="POST">
+                  <form class="auth-login-form mt-2" method="POST">
                     <div class="mb-1">
                       <label class="form-label" for="login-email">Email</label>
-                      <input class="form-control" id="login-email" type="text" name="login-email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1"/>
+                      <input class="form-control" id="login-email" type="text" name="email" placeholder="john@example.com" aria-describedby="login-email" autofocus="" tabindex="1"/>
                     </div>
                     <div class="mb-1">
                       <div class="d-flex justify-content-between">
                         <label class="form-label" for="login-password">Password</label><a href="auth-forgot-password-cover.html"><small>Forgot Password?</small></a>
                       </div>
                       <div class="input-group input-group-merge form-password-toggle">
-                        <input class="form-control form-control-merge" id="login-password" type="password" name="login-password" placeholder="············" aria-describedby="login-password" tabindex="2"/><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                        <input class="form-control form-control-merge" id="login-password" type="password" name="Password" placeholder="············" aria-describedby="login-password" tabindex="2"/><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                       </div>
                     </div>
                     <div class="mb-1">
@@ -118,7 +144,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <label class="form-check-label" for="remember-me"> Remember Me</label>
                       </div>
                     </div>
-                    <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
+                    <button type="submit" name="login" class="btn btn-primary w-100" tabindex="4">Login</button>
                   </form>                 
               </div>
               <!-- /Login-->

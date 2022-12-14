@@ -162,8 +162,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         else if($status=='Completed'){
                                                             echo '<span class="badge rounded-pill badge-light-success me-1">Completed</span>';
                                                         }
-                                                        else if($status=='Pending'){
-                                                            echo '<span class="badge rounded-pill badge-light-warning me-1">Pending</span>';
+                                                        else if($status=='Deactive'){
+                                                            echo '<span class="badge rounded-pill badge-light-warning me-1">Deactive</span>';
                                                         }
                                                         else if($status=='Scheduled'){
                                                             echo '<span class="badge rounded-pill badge-light-info me-1">Scheduled</span>';
