@@ -75,9 +75,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="intimation.php">Intimation</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Add Details
+                                    <li class="breadcrumb-item"><a href="#">Intimation Form</a>
                                     </li>
                                 </ol>
                             </div>
@@ -93,7 +91,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Add Details</h4>
+                                    <h4 class="card-title">Intimation Form</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">

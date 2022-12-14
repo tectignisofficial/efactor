@@ -99,7 +99,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="card-header">
                                     <h3 class="card-title">Intimation
                                     </h3>
-                                    <a class="btn btn-primary" style="float: right;" href="intimation_form.php"><i
+                                    <a class="btn btn-primary" style="float: right;" href="doctorintimationform.php"><i
                                             class="fa fa-plus"></i>
                                         Add Details
                                     </a>

@@ -47,6 +47,8 @@
           </li>
           <li class=" nav-item"><a class="d-flex align-items-center" href="doctorreglist.php"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="person">Doctor Registration</span></a>
           </li>
+          <li class=" nav-item"><a class="d-flex align-items-center" href="doctorintimation.php"><i data-feather="message-square"></i><span class="menu-title text-truncate" data-i18n="person">Doctor Intimation</span></a>
+          </li>
           <!-- <li class=" nav-item"><a class="d-flex align-items-center" href="app-todo.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="Todo">Todo</span></a>
           </li> -->
           <!-- <li class=" nav-item"><a class="d-flex align-items-center" href="app-calendar.html"><i data-feather="calendar"></i><span class="menu-title text-truncate" data-i18n="Calendar">Calendar</span></a>

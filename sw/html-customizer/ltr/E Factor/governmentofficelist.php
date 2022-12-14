@@ -1,4 +1,18 @@
-<?php include("include/config.php"); ?>
+<?php include("include/config.php"); 
+
+if(isset($_GET['delidid'])){
+    $currid=$_GET['currid'];
+    $sql=mysqli_query($conn,"delete from currency where id ='$delid'");
+    if($sql){
+        header('location:currency.php');
+    }
+}
+
+
+?>
+
+
+
 
 <!DOCTYPE html>
 <!--
